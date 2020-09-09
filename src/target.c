@@ -60,9 +60,10 @@ void * target_display_all(void *vargp) {
 
         if(TARGET_COUNT > 0)
             mvprintw(1,10,"accuracy %.2f%%",(float)TARGET_REACHED / TARGET_COUNT *100.0);
+        else if(TARGET_COUNT == 1) {clear(); refresh();}
 
         attron(COLOR_PAIR(random_color));
-        target_display(cursor->x,cursor->y,cursor->height,cursor->width,'X');
+        target_display(cursor->x,cursor->y,cursor->height,cursor->width,' ');
         attroff(COLOR_PAIR(random_color));
         
         napms(MILLISECONDS);

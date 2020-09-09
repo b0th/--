@@ -74,8 +74,8 @@ void main(void){
  
     // Menu options
     set_menu_mark(a_menu, " x ");
-    set_menu_fore(a_menu, COLOR_PAIR(1) | A_REVERSE);
-    set_menu_back(a_menu, COLOR_PAIR(1));
+    set_menu_fore(a_menu, COLOR_PAIR(8) | A_REVERSE);
+    set_menu_back(a_menu, COLOR_PAIR(8));
 
     Centering(Window_width, &XPOS, &YPOS);
 
