@@ -26,8 +26,8 @@ int aim_trainer(void) {
     for(int i = 0;i<MAX_TARGETS+2;i++) {
         height      = (rand()%(5-1))+2;  
         width       = height*2;
-        x           = (rand()%(TERMINAL_SIZE[1]-width-1))+width;
-        y           = (rand()%(TERMINAL_SIZE[0]-height-1))+height;
+        x           = (rand()%(TERMINAL_SIZE[1]-width-1)+2);
+        y           = (rand()%(TERMINAL_SIZE[0]-height-1)+2);
         target_append(head, x, y, height, width);
     }
 
@@ -49,8 +49,11 @@ int aim_trainer(void) {
                 }
             }     
         }
+        break;
+        case 'q': endwin(); exit(0);
     }
-}
 
+}
+    sleep(1);
     return 1;
 }

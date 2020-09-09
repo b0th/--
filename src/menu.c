@@ -18,7 +18,7 @@ char * crosshair[] = {
                         (char*) NULL
                  };
 
-void main(){
+void main(void){
 
     // Initialization functions
     initscr();              // Initialize the window
@@ -112,7 +112,12 @@ void main(){
             {
                 const char * ITEM_NAME  =  item_name(current_item(a_menu)); ;
                 if          (ITEM_NAME  == "Exit") {endwin(); return;}
-                if          (ITEM_NAME  == "Aim")  {aim_trainer();endwin();exit(0);}
+                if          (ITEM_NAME  == "Aim")  {
+                                                      clear();refresh();
+                                                      sleep(1);
+                                                      aim_trainer();
+                                                      endwin();exit(0);
+                                                    }
                 break;
             }
         }
